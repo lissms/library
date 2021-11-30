@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 
 //Services
 import { getBooks } from "../../services/booksApi";
+
 // Components
 import Book from "./Book";
 
 // Styled
 import { ItemListStyled } from "./bookList.styled";
+
+import Layaut from "../../layaut/Layaut";
 
 import PropTypes from "prop-types";
 
@@ -19,18 +22,18 @@ function BookList(props) {
     });
   }, []);
 
-  console.log(`books`, bookList[0]?.name);
-
   return (
-    <ul>
-      {bookList.map((book, index) => {
-        return (
-          <ItemListStyled key={index}>
-            <Book name={book.name}></Book>
-          </ItemListStyled>
-        );
-      })}
-    </ul>
+    <Layaut>
+      <ul>
+        {bookList.map((book, index) => {
+          return (
+            <ItemListStyled key={index}>
+              <Book name={book.name} id={book.id}></Book>
+            </ItemListStyled>
+          );
+        })}
+      </ul>
+    </Layaut>
   );
 }
 

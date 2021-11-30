@@ -1,40 +1,45 @@
-import React from 'react'
+import React from "react";
+
+//REACT-ROUTER-DOM
+import { useHistory } from "react-router-dom";
 
 //Images-logos
-import logo from "../../asset/images/icono_short.png"
-import logoLarge from "../../asset/images/Logo.png"
-import book from "../../asset/images/book.png"
+import logo from "../../asset/images/icono_short.png";
+import logoLarge from "../../asset/images/Logo.png";
+import book from "../../asset/images/book.png";
 
 // Styled
-import { HeaderStyled, ContentStyled, ButtonStyled, FooterStyled} from "./layaut.styled"
-
+import {
+  HeaderStyled,
+  ContentStyled,
+  ButtonStyled,
+  FooterStyled,
+} from "./layaut.styled";
 
 function Layaut(props) {
-    return (
-        <div>
-            <HeaderStyled>
-                <img className="logo" src={logo} alt="icono" />
-                <h1 className="title"> My Library</h1>
-            </HeaderStyled>
+  const history = useHistory();
 
-            <ContentStyled>
-                {props.children}
-            <ButtonStyled><img src={book} alt="book" /></ButtonStyled>
-            </ContentStyled>
+  return (
+    <div>
+      <HeaderStyled>
+        <img className="logo" src={logo} alt="icono" />
+        <h1 className="title"> My Library</h1>
+      </HeaderStyled>
 
-            
-            <FooterStyled>
-                <img src={logoLarge} alt="" />
-            </FooterStyled>
-        </div>
-    )
+      <ContentStyled>
+        {props.children}
+        <ButtonStyled onClick={() => history.push("/book/add")}>
+          <img src={book} alt="book" />
+        </ButtonStyled>
+      </ContentStyled>
+
+      <FooterStyled>
+        <img src={logoLarge} alt="" />
+      </FooterStyled>
+    </div>
+  );
 }
 
-Layaut.propTypes = {
+Layaut.propTypes = {};
 
-}
-
-export default Layaut
-
-
-      
+export default Layaut;

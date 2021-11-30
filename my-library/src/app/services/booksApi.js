@@ -9,12 +9,27 @@ export const getBooks = () => {
 };
 
 export const getBookDetails = (id) => {
-  return fetch(`https://my-json-server.typicode.com/lissms/library-db/db`)
+  return fetch(
+    `https://my-json-server.typicode.com/lissms/library-db/books/${id}`
+  )
     .then((response) => response.json())
     .then((data) => {
       return {
-        name: data.name,
-        birthdate: data.birthdate,
+        bookName: data.name,
+        isbn: data.isbn,
+        authorId: data.author,
+      };
+    });
+};
+export const getAuthorDetails = (author) => {
+  return fetch(
+    `https://my-json-server.typicode.com/lissms/library-db/authors/${author}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      return {
+        author: data.first_name,
+        authorLastName: data.last_name,
       };
     });
 };

@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import background from "../../asset/images/library-background.jpg";
-import {COLORS} from "../../styles/variables/colors"
 
+//Images
+import background from "../../asset/images/library-background.jpg";
+
+//Variables
+import { COLORS } from "../../styles/variables/colors";
 
 export const HeaderStyled = styled.header`
   background: ${COLORS.black};
@@ -27,8 +30,7 @@ export const HeaderStyled = styled.header`
 `;
 
 export const ContentStyled = styled.div`
-  background-image: ${COLORS.general_background}
-    url(${background});
+  background-image: ${COLORS.general_background} url(${background});
   min-height: 94vh;
   padding-top: 12vh;
   box-sizing: border-box;
@@ -48,10 +50,8 @@ export const ButtonStyled = styled.button`
 `;
 
 export const FooterStyled = styled.footer`
- background: ${COLORS.black};
- display: flex;
- justify-content: center;
- align-items: center;
+  background: ${COLORS.black};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
-
-

@@ -5,12 +5,9 @@ import PropTypes from "prop-types";
 import { CardStyled } from "./book.styled";
 
 //UTILITIES
+import { COLORS } from "../../../styles/variables/colors.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTrashAlt,
-  faUserEdit,
-  faEdit,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 function Book(props) {
   // icon
@@ -21,8 +18,10 @@ function Book(props) {
     <div>
       <CardStyled>
         <p className="title">{props.name}</p>
-        <button>{edit}</button>
-        <button>{remove}</button>
+        <div className="button-container">
+          <button className="button">{edit}</button>
+          <button className="button">{remove}</button>
+        </div>
       </CardStyled>
     </div>
   );

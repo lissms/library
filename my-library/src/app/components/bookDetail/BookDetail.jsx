@@ -8,8 +8,18 @@ import { getBookDetails, getAuthorDetails } from "../../services/booksApi";
 //Component
 import Layaut from "../../layaut/Layaut";
 
+//REACT-ROUTER-DOM
+import { useHistory } from "react-router-dom";
+
 // Styled
 import { DetailBookStyled } from "./bookDetail.styled";
+// Funtion
+
+import {
+  handleUpdate,
+  handleRemoveClick,
+  handleBookListClick,
+} from "../../services/functions";
 
 //Utilities
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,6 +39,8 @@ function BookDetail(props) {
 
   // hooks router
   let myObjetBookParam = useParams();
+
+  let history = useHistory();
 
   const [bookDetail, setBookDetail] = useState({});
   const [authorDetail, setAuthorDetail] = useState({});
@@ -55,9 +67,24 @@ function BookDetail(props) {
           </p>
           <p className="isbn"> ISBN: {bookDetail.isbn}</p>
           <div className="button-container">
-            <button className="button">{edit}</button>
-            <button className="button">{remove}</button>
-            <button className="button">{bookList}</button>
+            <button
+              className="button"
+              onClick={() => handleUpdate(history, props.id)}
+            >
+              {edit}
+            </button>
+            <button
+              className="button"
+              onClick={() => handleRemoveClick(history, props.id)}
+            >
+              {remove}
+            </button>
+            <button
+              className="button"
+              onClick={() => handleBookListClick(history, props.id)}
+            >
+              {bookList}
+            </button>
           </div>
         </div>
       </DetailBookStyled>

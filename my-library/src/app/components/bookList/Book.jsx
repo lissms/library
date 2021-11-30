@@ -25,8 +25,10 @@ function Book(props) {
 
   return (
     <div>
-      <CardStyled onClick={handleClick}>
-        <p className="title">{props.name}</p>
+      <CardStyled>
+        <p className="title" onClick={handleClick}>
+          {props.name}
+        </p>
         <div className="button-container">
           <button className="button">{edit}</button>
           <button className="button">{remove}</button>

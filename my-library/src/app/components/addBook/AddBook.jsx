@@ -12,7 +12,10 @@ import { AddUserContainer, AddUserStyle } from "./addBook.styled";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 
-import { handleBookListClick } from "../../services/functions";
+import {
+  handleBookListClick,
+  handleAddAuthorClick,
+} from "../../services/functions";
 
 function AddBook(props) {
   const [newBookName, setNewBookName] = useState("");
@@ -25,8 +28,6 @@ function AddBook(props) {
   };
 
   let history = useHistory();
-
-  console.log(`newBookName, newIsbn, idAuthor`, newBookName, newIsbn, idAuthor);
 
   return (
     <Layaut>
@@ -63,13 +64,11 @@ function AddBook(props) {
             ></input>
             <input
               className="button-add-author"
-              disabled={newBookName === "" || newIsbn === "" || idAuthor === ""}
               onClick={() => {
-                addBook(newBookName, newIsbn, idAuthor);
-                setMessage(`The book named ${newBookName} has been update`);
+                handleAddAuthorClick(history);
               }}
-              type="submit"
-              value="save"
+              type="button"
+              value="Add Author"
             />
 
             <SelectAuthor

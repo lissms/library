@@ -1,0 +1,92 @@
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+
+import Layaut from "../../layaut/Layaut";
+import { addAuthor, getBooks } from "../../services/booksApi";
+
+//STYLES
+import { AddUserContainer, AddUserStyle } from "./addAuthor.styled";
+
+//REACT-ROUTER-DOM
+import { useHistory } from "react-router-dom";
+
+import { handleBookListClick } from "../../services/functions";
+
+function AddAuthor(props) {
+  const [authorName, setAuthorName] = useState("");
+  const [authorLastName, setAuthorLastName] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  let history = useHistory();
+  return (
+    <Layaut>
+      <AddUserContainer>
+        <AddUserStyle>
+          <h2 className="title">Add new Author</h2>
+          <form className="from" onSubmit={handleFormSubmit}>
+            <label className="add-name-label" for="Name">
+              Name Author
+            </label>
+            <input
+              className="add-name-book"
+              onChange={(ev) => {
+                setAuthorName(ev.target.value);
+              }}
+              type="text"
+              name="name-author"
+              id="name-author"
+              placeholder="Name author"
+              required
+            />
+            <label className="add-author" for="Name">
+              Last Name Author
+            </label>
+            <input
+              className="add-isbn"
+              onChange={(ev) => {
+                setAuthorLastName(ev.target.value);
+              }}
+              type="text"
+              id="last-name"
+              name="last-name"
+              required
+            ></input>
+
+            <input
+              className="button-save"
+              name={authorName}
+              lastName={authorLastName}
+              disabled={authorName === "" || authorLastName === ""}
+              onClick={() => {
+                addAuthor(authorName, authorLastName);
+                setMessage(
+                  `The author ${authorLastName}, ${authorName}  has been added`
+                );
+              }}
+              type="submit"
+              value="save"
+            />
+          </form>
+          <p>{message}</p>
+        </AddUserStyle>
+        <button
+          className="button"
+          onClick={() => {
+            handleBookListClick(history);
+            getBooks();
+          }}
+        >
+          X
+        </button>
+      </AddUserContainer>
+    </Layaut>
+  );
+}
+
+AddAuthor.propTypes = {};
+
+export default AddAuthor;

@@ -1,7 +1,9 @@
+const url = "http://localhost:3001";
+
 //GET
 
 export const getBooks = () => {
-  return fetch("https://my-json-server.typicode.com/lissms/library-db/books")
+  return fetch(`${url}/books`)
     .then((response) => response.json())
     .then((data) => {
       return data;
@@ -9,7 +11,7 @@ export const getBooks = () => {
 };
 
 export const getAuthor = () => {
-  return fetch("https://my-json-server.typicode.com/lissms/library-db/authors")
+  return fetch(`${url}/authors`)
     .then((response) => response.json())
     .then((data) => {
       return data;
@@ -17,9 +19,7 @@ export const getAuthor = () => {
 };
 
 export const getBookDetails = (id) => {
-  return fetch(
-    `https://my-json-server.typicode.com/lissms/library-db/books/${id}`
-  )
+  return fetch(`${url}/books/${id}`)
     .then((response) => response.json())
     .then((data) => {
       return {
@@ -30,9 +30,7 @@ export const getBookDetails = (id) => {
     });
 };
 export const getAuthorDetails = (author) => {
-  return fetch(
-    `https://my-json-server.typicode.com/lissms/library-db/authors/${author}`
-  )
+  return fetch(`${url}/authors/${author}`)
     .then((response) => response.json())
     .then((data) => {
       return {
@@ -45,7 +43,7 @@ export const getAuthorDetails = (author) => {
 //POST
 
 export const addBook = (name, isbn, author) => {
-  return fetch(`https://my-json-server.typicode.com/lissms/library-db/books`, {
+  return fetch(`${url}/books`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -56,30 +54,27 @@ export const addBook = (name, isbn, author) => {
     .then((data) => data);
 };
 
-export const addAuthor = (author) => {
-  return fetch(
-    `https://my-json-server.typicode.com/lissms/library-db/authors`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ author }),
-    }
-  )
+export const addAuthor = (first_name, last_name) => {
+  return fetch(`${url}/authors`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ first_name, last_name }),
+  })
     .then((response) => response.json())
     .then((data) => data);
 };
 
 //PUT
 
-export const updateBook = (id, book, author, isbn) => {
-  return fetch(`https://my-json-server.typicode.com/lissms/library-db/db`, {
+export const updateBook = (id, book, isbn) => {
+  return fetch(`${url}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id, book, author, isbn }),
+    body: JSON.stringify({ id, book, isbn }),
   })
     .then((response) => response.json())
     .then((data) => data);
@@ -88,7 +83,7 @@ export const updateBook = (id, book, author, isbn) => {
 //DELETE
 
 export const deleteBook = (id) => {
-  return fetch(`https://my-json-server.typicode.com/lissms/library-db/db`, {
+  return fetch(`${url}`, {
     method: "DELETE",
   });
 };

@@ -10,6 +10,9 @@ export const handleBookListClick = (history) => {
 export const handleAddClick = (history, props) => {
   history.push(`/book/update/${props}`);
 };
+export const handleAddAuthorClick = (history) => {
+  history.push(`/author/add`);
+};
 
 export const handleDetailClick = (history, props) => {
   history.push(`/book/detail/${props}`);

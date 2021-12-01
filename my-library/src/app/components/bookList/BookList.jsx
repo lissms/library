@@ -18,7 +18,8 @@ function BookList(props) {
 
   useEffect(() => {
     getBooks().then((data) => {
-      setBooksList(data.books);
+      console.log(`data`, data);
+      setBooksList(data);
     });
   }, []);
 

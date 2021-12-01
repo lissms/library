@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import Layaut from "../../layaut/Layaut";
 import { addBook, getBooks } from "../../services/booksApi";
 
+import SelectAuthor from "./select/SelectAuthor";
+
 //STYLES
 import { AddUserContainer, AddUserStyle } from "./addBook.styled";
 
@@ -15,6 +17,7 @@ import { handleBookListClick } from "../../services/functions";
 function AddBook(props) {
   const [newBookName, setNewBookName] = useState("");
   const [newIsbn, setNewIsbn] = useState("");
+  const [idAuthor, setIdAuthor] = useState("");
   const [message, setMessage] = useState("");
 
   const handleFormSubmit = (event) => {
@@ -22,6 +25,8 @@ function AddBook(props) {
   };
 
   let history = useHistory();
+
+  console.log(`newBookName, newIsbn, idAuthor`, newBookName, newIsbn, idAuthor);
 
   return (
     <Layaut>
@@ -56,14 +61,30 @@ function AddBook(props) {
               name="isbn"
               required
             ></input>
+            <input
+              className="button-add-author"
+              disabled={newBookName === "" || newIsbn === "" || idAuthor === ""}
+              onClick={() => {
+                addBook(newBookName, newIsbn, idAuthor);
+                setMessage(`The book named ${newBookName} has been update`);
+              }}
+              type="submit"
+              value="save"
+            />
 
+            <SelectAuthor
+              onChange={(ev) => {
+                setIdAuthor(ev.target.value);
+              }}
+            />
             <input
               className="button-save"
               name={newBookName}
               isbn={newIsbn}
-              disabled={newBookName === "" || newIsbn === ""}
+              idAuthor={idAuthor}
+              disabled={newBookName === "" || newIsbn === "" || idAuthor === ""}
               onClick={() => {
-                addBook(newBookName, newIsbn);
+                addBook(newBookName, newIsbn, idAuthor);
                 setMessage(`The book named ${newBookName} has been update`);
               }}
               type="submit"

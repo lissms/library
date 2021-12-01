@@ -36,13 +36,13 @@ export const getAuthorDetails = (author) => {
 
 //POST
 
-export const addBook = (name, birthdate) => {
-  return fetch(`https://my-json-server.typicode.com/lissms/library-db/db`, {
+export const addBook = (book, isbn) => {
+  return fetch(`https://my-json-server.typicode.com/lissms/library-db/books`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, birthdate }),
+    body: JSON.stringify({ book, isbn }),
   })
     .then((response) => response.json())
     .then((data) => data);
@@ -50,13 +50,13 @@ export const addBook = (name, birthdate) => {
 
 //PUT
 
-export const updateBook = (id, name, birthdate) => {
+export const updateBook = (id, book, author, isbn) => {
   return fetch(`https://my-json-server.typicode.com/lissms/library-db/db`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id, name, birthdate }),
+    body: JSON.stringify({ id, book, author, isbn }),
   })
     .then((response) => response.json())
     .then((data) => data);

@@ -81,7 +81,7 @@ function BookDetail(props) {
             </button>
             <button
               className="button"
-              onClick={() => handleBookListClick(history, props.id)}
+              onClick={() => handleBookListClick(history)}
             >
               {bookList}
             </button>

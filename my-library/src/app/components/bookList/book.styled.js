@@ -18,6 +18,7 @@ export const CardStyled = styled.div`
     font-weight: 100;
     font-size: 24px;
     padding: 5px;
+    cursor: pointer;
   }
   & .button-container {
     display: flex;

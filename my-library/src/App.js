@@ -7,12 +7,17 @@ import { Switch, Route } from "react-router-dom";
 import BookList from "./app/components/bookList/BookList.jsx";
 import BookDetail from "./app/components/bookDetail/BookDetail";
 import UpdateBook from "./app/components/update/UpdateBook";
+import AddBook from "./app/components/addBook/AddBook";
 
 function App() {
   return (
     <Switch>
       <Route exact path="/">
         <BookList></BookList>
+      </Route>
+
+      <Route exact path="/book/add">
+        <AddBook />
       </Route>
 
       <Route exact path="/book/detail/:id">

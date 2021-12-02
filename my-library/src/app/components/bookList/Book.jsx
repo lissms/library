@@ -33,6 +33,7 @@ function Book(props) {
     <div>
       <CardStyled>
         <p
+          title="more datail"
           className="title"
           onClick={() => handleDetailClick(history, props.id)}
         >
@@ -40,12 +41,14 @@ function Book(props) {
         </p>
         <div className="button-container">
           <button
+            title="update Book"
             className="button"
             onClick={() => handleUpdate(history, props.id)}
           >
             {edit}
           </button>
           <button
+            title="update author"
             className="button"
             onClick={() => handleUpdateAuthor(history, props.author)}
           >

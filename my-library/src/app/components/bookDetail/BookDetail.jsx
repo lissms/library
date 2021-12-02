@@ -71,12 +71,14 @@ function BookDetail(props) {
           <p className="isbn"> ISBN: {bookDetail.isbn}</p>
           <div className="button-container">
             <button
+              title="update book"
               className="button"
               onClick={() => handleUpdate(history, id)}
             >
               {edit}
             </button>
             <button
+              title="update author"
               className="button"
               onClick={() => handleUpdateAuthor(history, authorDetail.authorId)}
             >
@@ -89,6 +91,7 @@ function BookDetail(props) {
               {remove}
             </button>
             <button
+              title="Back to book list"
               className="button"
               onClick={() => handleBookListClick(history)}
             >

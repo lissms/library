@@ -28,7 +28,10 @@ function Layaut(props) {
 
       <ContentStyled>
         {props.children}
-        <ButtonStyled onClick={() => history.push("/book/add")}>
+        <ButtonStyled
+          title="Add book"
+          onClick={() => history.push("/book/add")}
+        >
           <img src={book} alt="book" />
         </ButtonStyled>
       </ContentStyled>

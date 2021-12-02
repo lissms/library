@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 //Variables
-import { COLORS } from "../../../styles/variables/colors";
+import { COLORS } from "./variables/colors";
 
-export const AddUserContainer = styled.div`
+export const CardContainerStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 88vh;
 `;
 
-export const AddUserStyle = styled.div`
+export const CardStyle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -49,15 +49,6 @@ export const AddUserStyle = styled.div`
     }
   }
 
-  & .add-name-label {
-    margin-bottom: 4px;
-  }
-
-  & .add-birthday-label {
-    margin-bottom: 4px;
-    margin-top: 10px;
-  }
-
   & input {
     width: 100%;
     border-radius: 4px;
@@ -86,10 +77,5 @@ export const AddUserStyle = styled.div`
     background: #c5c5c5;
     border: 2px solid #969696;
     color: #969696;
-  }
-
-  & .user-name {
-    color: red;
-    font-weight: bold;
   }
 `;

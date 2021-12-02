@@ -4,7 +4,7 @@ import Layaut from "../../layaut/Layaut";
 //SERVICES
 import { addAuthor, getBooks } from "../../services/booksApi";
 //STYLES
-import { AddUserContainer, AddUserStyle } from "./addAuthor.styled";
+import { CardContainerStyle, CardStyle } from "../../../styles/cardTeme.styled";
 //ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -28,8 +28,8 @@ function AddAuthor(props) {
 
   return (
     <Layaut>
-      <AddUserContainer>
-        <AddUserStyle>
+      <CardContainerStyle>
+        <CardStyle>
           <h2 className="title">Add new Author</h2>
           <button
             title="Close"
@@ -41,12 +41,9 @@ function AddAuthor(props) {
           >
             {close}
           </button>
-          <form className="from" onSubmit={handleFormSubmit}>
-            <label className="add-name-label" for="Name">
-              Name Author
-            </label>
+          <form className="form" onSubmit={handleFormSubmit}>
+            <label for="Name">Name Author</label>
             <input
-              className="add-name-book"
               onChange={(ev) => {
                 setAuthorName(ev.target.value);
               }}
@@ -56,11 +53,8 @@ function AddAuthor(props) {
               placeholder="Name author"
               required
             />
-            <label className="add-author" for="Name">
-              Last Name Author
-            </label>
+            <label for="Name">Last Name Author</label>
             <input
-              className="add-isbn"
               onChange={(ev) => {
                 setAuthorLastName(ev.target.value);
               }}
@@ -86,8 +80,8 @@ function AddAuthor(props) {
             />
           </form>
           <p>{message}</p>
-        </AddUserStyle>
-      </AddUserContainer>
+        </CardStyle>
+      </CardContainerStyle>
     </Layaut>
   );
 }

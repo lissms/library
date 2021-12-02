@@ -17,7 +17,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 //FUNTION HANDLER
-import { goToBookList } from "../../services/functions";
+import { goToBookList } from "../../services/helpNavigate";
 
 function UpdateAuthor(props) {
   const [newAuthorName, setNewAuthorName] = useState("");

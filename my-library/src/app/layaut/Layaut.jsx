@@ -13,7 +13,7 @@ import logo from "../../asset/images/icono_short.png";
 import logoLarge from "../../asset/images/Logo.png";
 import book from "../../asset/images/book.png";
 //FUNTION HANDLER
-import { goToAddBookPage } from "../services/functions";
+import { goToAddBookPage } from "../services/helpNavigate";
 
 function Layaut(props) {
   const history = useHistory();

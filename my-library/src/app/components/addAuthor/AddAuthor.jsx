@@ -11,7 +11,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 //FUNTION HANDLER
-import { goToBookList } from "../../services/functions";
+import { goToBookList } from "../../services/helpNavigate";
 
 function AddAuthor(props) {
   const [authorName, setAuthorName] = useState("");

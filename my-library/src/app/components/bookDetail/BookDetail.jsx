@@ -21,7 +21,7 @@ import {
   goToUpdateBookPage,
   goToBookList,
   goToUpdateAuthorPage,
-} from "../../services/functions";
+} from "../../services/helpNavigate";
 
 function BookDetail(props) {
   const [bookDetail, setBookDetail] = useState({});

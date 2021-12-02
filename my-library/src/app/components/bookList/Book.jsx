@@ -11,7 +11,7 @@ import {
   goToUpdateBookPage,
   goToBookDetail,
   goToUpdateAuthorPage,
-} from "../../services/functions";
+} from "../../services/helpNavigate";
 
 function Book(props) {
   // icon

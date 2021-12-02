@@ -9,7 +9,7 @@ import {
   getBooks,
 } from "../../services/booksApi";
 //STYLES
-import { UpdateContainer, UpdateStyle } from "./updateAuthor.styled";
+import { CardContainerStyle, CardStyle } from "../../../styles/cardTeme.styled";
 //ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -44,8 +44,8 @@ function UpdateAuthor(props) {
 
   return (
     <Layout>
-      <UpdateContainer>
-        <UpdateStyle>
+      <CardContainerStyle>
+        <CardStyle>
           <h2 className="title">Update Author</h2>
           <button
             title="Close"
@@ -57,12 +57,11 @@ function UpdateAuthor(props) {
           >
             {close}
           </button>
-          <form className="from" onSubmit={handleFormSubmit}>
+          <form className="form" onSubmit={handleFormSubmit}>
             <label className="update-name-label" for="Name">
               Name
             </label>
             <input
-              className="update-name"
               onChange={(ev) => {
                 setNewAuthorName(ev.target.value);
                 setDisabled(false);
@@ -72,11 +71,8 @@ function UpdateAuthor(props) {
               value={newAuthorName}
               required
             />
-            <label className="update-last-name" for="Name">
-              Last Name
-            </label>
+            <label for="Name">Last Name</label>
             <input
-              className="update-last-name"
               onChange={(ev) => {
                 setAuthorLastName(ev.target.value);
                 setDisabled(false);
@@ -100,8 +96,8 @@ function UpdateAuthor(props) {
             />
           </form>
           <p>{message}</p>
-        </UpdateStyle>
-      </UpdateContainer>
+        </CardStyle>
+      </CardContainerStyle>
     </Layout>
   );
 }

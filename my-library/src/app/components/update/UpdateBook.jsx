@@ -5,7 +5,7 @@ import Layout from "../../layaut/Layaut";
 //SERVICE
 import { updateBook, getBookDetails, getBooks } from "../../services/booksApi";
 //STYLES
-import { UpdateContainer, UpdateStyle } from "./updateBook.styled";
+import { CardContainerStyle, CardStyle } from "../../../styles/cardTeme.styled";
 //ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -39,9 +39,9 @@ function UpdateBook(props) {
   };
 
   return (
-    <Layout isButtonBackVisible={true}>
-      <UpdateContainer>
-        <UpdateStyle>
+    <Layout>
+      <CardContainerStyle>
+        <CardStyle>
           <h2 className="title">Update Book</h2>
           <button
             title="Close"
@@ -54,9 +54,7 @@ function UpdateBook(props) {
             {close}
           </button>
           <form className="from" onSubmit={handleFormSubmit}>
-            <label className="update-name-label" for="Name">
-              Update name book
-            </label>
+            <label for="Name">Update name book</label>
             <input
               className="update-name"
               onChange={(ev) => {
@@ -70,9 +68,7 @@ function UpdateBook(props) {
               value={newBookName}
               required
             />
-            <label className="update-isbn" for="Name">
-              ISBN
-            </label>
+            <label for="Name">ISBN</label>
             <input
               className="update-birthday"
               onChange={(ev) => {
@@ -98,8 +94,8 @@ function UpdateBook(props) {
             />
           </form>
           <p>{message}</p>
-        </UpdateStyle>
-      </UpdateContainer>
+        </CardStyle>
+      </CardContainerStyle>
     </Layout>
   );
 }

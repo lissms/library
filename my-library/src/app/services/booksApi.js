@@ -29,11 +29,13 @@ export const getBookDetails = (id) => {
       };
     });
 };
+
 export const getAuthorDetails = (author) => {
   return fetch(`${url}/authors/${author}`)
     .then((response) => response.json())
     .then((data) => {
       return {
+        authorId: data.id,
         author: data.first_name,
         authorLastName: data.last_name,
       };
@@ -69,12 +71,26 @@ export const addAuthor = (first_name, last_name) => {
 //PUT
 
 export const updateBook = (id, book, isbn) => {
-  return fetch(`${url}`, {
+  return fetch(`${url}/books/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ id, book, isbn }),
+  })
+    .then((response) => response.json())
+    .then((data) => data);
+};
+export const updateAuthor = (authorId, name, lastName) => {
+  return fetch(`${url}/authors/${authorId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      first_name: name,
+      last_name: lastName,
+    }),
   })
     .then((response) => response.json())
     .then((data) => data);

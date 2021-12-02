@@ -19,6 +19,7 @@ import {
   handleUpdate,
   handleRemoveClick,
   handleBookListClick,
+  handleUpdateAuthor,
 } from "../../services/functions";
 
 //Utilities
@@ -26,6 +27,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrashAlt,
   faEdit,
+  faUserEdit,
   faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -34,11 +36,12 @@ import PropTypes from "prop-types";
 function BookDetail(props) {
   // icon
   const edit = <FontAwesomeIcon icon={faEdit} />;
+  const editauthor = <FontAwesomeIcon icon={faUserEdit} />;
   const remove = <FontAwesomeIcon icon={faTrashAlt} />;
   const bookList = <FontAwesomeIcon icon={faBookOpen} />;
 
   // hooks router
-  let myObjetBookParam = useParams();
+  let { id } = useParams();
 
   let history = useHistory();
 
@@ -49,10 +52,10 @@ function BookDetail(props) {
   console.log(`bookDetail.authorId`, bookDetail.authorId);
 
   useEffect(() => {
-    getBookDetails(myObjetBookParam.id).then((data) => {
+    getBookDetails(id).then((data) => {
       setBookDetail(data);
-      getAuthorDetails(data.authorId).then((data) => {
-        setAuthorDetail(data);
+      getAuthorDetails(data.authorId).then((author) => {
+        setAuthorDetail(author);
       });
     });
   }, []);
@@ -69,13 +72,19 @@ function BookDetail(props) {
           <div className="button-container">
             <button
               className="button"
-              onClick={() => handleUpdate(history, props.id)}
+              onClick={() => handleUpdate(history, id)}
             >
               {edit}
             </button>
             <button
               className="button"
-              onClick={() => handleRemoveClick(history, props.id)}
+              onClick={() => handleUpdateAuthor(history, authorDetail.authorId)}
+            >
+              {editauthor}
+            </button>
+            <button
+              className="button"
+              onClick={() => handleRemoveClick(history, id)}
             >
               {remove}
             </button>

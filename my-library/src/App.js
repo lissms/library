@@ -7,6 +7,7 @@ import { Switch, Route } from "react-router-dom";
 import BookList from "./app/components/bookList/BookList.jsx";
 import BookDetail from "./app/components/bookDetail/BookDetail";
 import UpdateBook from "./app/components/update/UpdateBook";
+import UpdateAuthor from "./app/components/update/UpdateAuthor";
 import AddBook from "./app/components/addBook/AddBook";
 import AddAuthor from "./app/components/addAuthor/AddAuthor";
 
@@ -31,6 +32,9 @@ function App() {
 
       <Route exact path="/book/update/:id">
         <UpdateBook />
+      </Route>
+      <Route exact path="/author/update/:authorId">
+        <UpdateAuthor />
       </Route>
     </Switch>
   );

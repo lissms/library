@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-//FUNTION HANDLER
+//FUNCTION NAVIGATE
 import { goToBookList, goToAddAuthorPage } from "../../services/helpNavigate";
 
 function AddBook(props) {

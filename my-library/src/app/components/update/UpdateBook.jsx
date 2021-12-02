@@ -12,7 +12,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 //REACT-ROUTER-DOM
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-//FUNTION HANDLER
+//FUNCTION NAVIGATE
 import { goToBookList } from "../../services/helpNavigate";
 
 function UpdateBook(props) {

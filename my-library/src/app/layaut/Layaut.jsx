@@ -1,6 +1,8 @@
 import React from "react";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
+//SERVICES
+import { getBooks } from "../services/booksApi";
 //STYLES
 import {
   HeaderStyled,
@@ -12,8 +14,8 @@ import {
 import logo from "../../asset/images/icono_short.png";
 import logoLarge from "../../asset/images/Logo.png";
 import book from "../../asset/images/book.png";
-//FUNTION HANDLER
-import { goToAddBookPage } from "../services/helpNavigate";
+//FUNCTION NAVIGATE
+import { goToAddBookPage, goToBookList } from "../services/helpNavigate";
 
 function Layaut(props) {
   const history = useHistory();
@@ -21,7 +23,16 @@ function Layaut(props) {
   return (
     <div>
       <HeaderStyled>
-        <img className="logo" src={logo} alt="icono" />
+        <button
+          title="Close"
+          className="button"
+          onClick={() => {
+            goToBookList(history);
+            getBooks();
+          }}
+        >
+          <img className="logo" src={logo} alt="icono" />
+        </button>
         <h1 className="title"> My Library</h1>
       </HeaderStyled>
 

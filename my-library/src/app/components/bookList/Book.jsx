@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-//FUNTION HANDLER
+//FUNCTION NAVIGATE
 import {
   goToUpdateBookPage,
   goToBookDetail,

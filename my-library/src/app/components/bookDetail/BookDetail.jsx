@@ -16,7 +16,7 @@ import {
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
-//FUNTION HANDLER
+//FUNCTION NAVIGATE
 import {
   goToUpdateBookPage,
   goToBookList,

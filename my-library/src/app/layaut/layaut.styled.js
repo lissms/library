@@ -27,6 +27,11 @@ export const HeaderStyled = styled.header`
   & .logo {
     width: 42px;
   }
+  & .button {
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
 `;
 
 export const ContentStyled = styled.div`

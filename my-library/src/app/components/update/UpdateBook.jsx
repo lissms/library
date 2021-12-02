@@ -22,12 +22,12 @@ function UpdateBook(props) {
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
 
-  let myObjetParam = useParams();
+  let { id } = useParams();
 
   let history = useHistory();
 
   useEffect(() => {
-    getBookDetails(myObjetParam.id).then((data) => {
+    getBookDetails(id).then((data) => {
       setNewBookName(data.bookName);
       setNewIsbn(data.isbn);
     });
@@ -79,7 +79,7 @@ function UpdateBook(props) {
               isbn={newIsbn}
               disabled={disabled === true || newBookName === ""}
               onClick={() => {
-                updateBook(myObjetParam.id, newBookName, newIsbn);
+                updateBook(id, newBookName, newIsbn);
                 setMessage(`The book ${newBookName} has been updated`);
               }}
               type="submit"

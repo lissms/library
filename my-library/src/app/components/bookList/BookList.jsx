@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
-
-//Services
-import { getBooks } from "../../services/booksApi";
-
-// Components
-import Book from "./Book";
-
-// Styled
-import { ItemListStyled, ListStyle } from "./bookList.styled";
-
+//COMPONENT
 import Layaut from "../../layaut/Layaut";
-
-import PropTypes from "prop-types";
+import Book from "./Book";
+//SERVICES
+import { getBooks } from "../../services/booksApi";
+//STYLES
+import { ItemListStyled, ListStyle } from "./bookList.styled";
 
 function BookList(props) {
   const [bookList, setBooksList] = useState([]);
@@ -36,7 +30,5 @@ function BookList(props) {
     </Layaut>
   );
 }
-
-BookList.propTypes = {};
 
 export default BookList;

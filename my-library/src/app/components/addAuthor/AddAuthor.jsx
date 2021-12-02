@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-
+//COMPONENT
 import Layaut from "../../layaut/Layaut";
+//SERVICES
 import { addAuthor, getBooks } from "../../services/booksApi";
-
 //STYLES
 import { AddUserContainer, AddUserStyle } from "./addAuthor.styled";
-
+//ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-
+//FUNTION HANDLER
 import { handleBookListClick } from "../../services/functions";
 
 function AddAuthor(props) {
@@ -27,6 +25,7 @@ function AddAuthor(props) {
   };
 
   let history = useHistory();
+
   return (
     <Layaut>
       <AddUserContainer>
@@ -92,7 +91,5 @@ function AddAuthor(props) {
     </Layaut>
   );
 }
-
-AddAuthor.propTypes = {};
 
 export default AddAuthor;

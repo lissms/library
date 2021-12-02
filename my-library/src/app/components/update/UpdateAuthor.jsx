@@ -1,27 +1,23 @@
-//REACT// HOOKS
+//REACT
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-
-//SERVICE/ API
+//COMPONENTS
+import Layout from "../../layaut/Layaut";
+//SERVICE
 import {
   updateAuthor,
   getAuthorDetails,
   getBooks,
 } from "../../services/booksApi";
-
-//COMPONENTS
-import Layout from "../../layaut/Layaut";
-
-import { handleBookListClick } from "../../services/functions";
-
 //STYLES
 import { UpdateContainer, UpdateStyle } from "./updateAuthor.styled";
-
-//REACT-ROUTER-DOM
-import { useHistory } from "react-router-dom";
-
+//ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+//REACT-ROUTER-DOM
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+//FUNTION HANDLER
+import { handleBookListClick } from "../../services/functions";
 
 function UpdateAuthor(props) {
   const [newAuthorName, setNewAuthorName] = useState("");
@@ -109,6 +105,5 @@ function UpdateAuthor(props) {
     </Layout>
   );
 }
-UpdateAuthor.propTypes = {};
 
 export default UpdateAuthor;

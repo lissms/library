@@ -1,28 +1,25 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-
+//COMPONENT
 import Layaut from "../../layaut/Layaut";
-import { addBook, getBooks } from "../../services/booksApi";
-
 import SelectAuthor from "./select/SelectAuthor";
-
+//SERVICES
+import { addBook, getBooks } from "../../services/booksApi";
 //STYLES
 import {
   AddUserContainer,
   AddUserStyle,
   ButtonAddAuthor,
 } from "./addBook.styled";
-
+//ICON
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-
+//FUNTION HANDLER
 import {
   handleBookListClick,
   handleAddAuthorClick,
 } from "../../services/functions";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 function AddBook(props) {
   const [newBookName, setNewBookName] = useState("");
@@ -122,7 +119,5 @@ function AddBook(props) {
     </Layaut>
   );
 }
-
-AddBook.propTypes = {};
 
 export default AddBook;

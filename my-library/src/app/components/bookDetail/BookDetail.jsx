@@ -1,55 +1,38 @@
 import React, { useState, useEffect } from "react";
-
-import { useParams } from "react-router-dom";
-
-//SERVICE/ API
-import { getBookDetails, getAuthorDetails } from "../../services/booksApi";
-
-//Component
+//COMPONENT
 import Layaut from "../../layaut/Layaut";
 
-//REACT-ROUTER-DOM
-import { useHistory } from "react-router-dom";
-
-// Styled
+//SERVICES
+import { getBookDetails, getAuthorDetails } from "../../services/booksApi";
+//STYLES
 import { DetailBookStyled } from "./bookDetail.styled";
-// Funtion
-
-import {
-  handleUpdate,
-  handleRemoveClick,
-  handleBookListClick,
-  handleUpdateAuthor,
-} from "../../services/functions";
-
-//Utilities
+//ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTrashAlt,
   faEdit,
   faUserEdit,
   faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
-
-import PropTypes from "prop-types";
+//REACT-ROUTER-DOM
+import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
+//FUNTION HANDLER
+import {
+  handleUpdate,
+  handleBookListClick,
+  handleUpdateAuthor,
+} from "../../services/functions";
 
 function BookDetail(props) {
-  // icon
-  const edit = <FontAwesomeIcon icon={faEdit} />;
-  const editauthor = <FontAwesomeIcon icon={faUserEdit} />;
-  const remove = <FontAwesomeIcon icon={faTrashAlt} />;
-  const bookList = <FontAwesomeIcon icon={faBookOpen} />;
-
-  // hooks router
-  let { id } = useParams();
-
-  let history = useHistory();
-
   const [bookDetail, setBookDetail] = useState({});
   const [authorDetail, setAuthorDetail] = useState({});
 
-  console.log(`object`, authorDetail);
-  console.log(`bookDetail.authorId`, bookDetail.authorId);
+  const edit = <FontAwesomeIcon icon={faEdit} />;
+  const editauthor = <FontAwesomeIcon icon={faUserEdit} />;
+  const bookList = <FontAwesomeIcon icon={faBookOpen} />;
+
+  let { id } = useParams();
+  let history = useHistory();
 
   useEffect(() => {
     getBookDetails(id).then((data) => {
@@ -98,7 +81,5 @@ function BookDetail(props) {
     </Layaut>
   );
 }
-
-BookDetail.propTypes = {};
 
 export default BookDetail;

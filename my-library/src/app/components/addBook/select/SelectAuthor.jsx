@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-
+//SERVICE
 import { getAuthor } from "../../../services/booksApi";
 
 function SelectAuthor(props) {
@@ -17,6 +16,7 @@ function SelectAuthor(props) {
   return (
     <div>
       <select name="select" onChange={props.onChange}>
+        <option value=""></option>
         {authorList.map((author, index) => {
           return (
             <option key={index} value={author.id}>
@@ -28,7 +28,5 @@ function SelectAuthor(props) {
     </div>
   );
 }
-
-SelectAuthor.propTypes = {};
 
 export default SelectAuthor;

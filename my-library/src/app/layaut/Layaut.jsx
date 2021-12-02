@@ -1,20 +1,17 @@
 import React from "react";
-
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-
-//Images-logos
-import logo from "../../asset/images/icono_short.png";
-import logoLarge from "../../asset/images/Logo.png";
-import book from "../../asset/images/book.png";
-
-// Styled
+//STYLES
 import {
   HeaderStyled,
   ContentStyled,
   ButtonStyled,
   FooterStyled,
 } from "./layaut.styled";
+//IMAGES
+import logo from "../../asset/images/icono_short.png";
+import logoLarge from "../../asset/images/Logo.png";
+import book from "../../asset/images/book.png";
 
 function Layaut(props) {
   const history = useHistory();
@@ -40,7 +37,5 @@ function Layaut(props) {
     </div>
   );
 }
-
-Layaut.propTypes = {};
 
 export default Layaut;

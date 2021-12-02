@@ -1,23 +1,19 @@
-//REACT// HOOKS
+//REACT
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-
-//SERVICE/ API
-import { updateBook, getBookDetails, getBooks } from "../../services/booksApi";
-
 //COMPONENTS
 import Layout from "../../layaut/Layaut";
-
-import { handleBookListClick } from "../../services/functions";
-
+//SERVICE
+import { updateBook, getBookDetails, getBooks } from "../../services/booksApi";
 //STYLES
 import { UpdateContainer, UpdateStyle } from "./updateBook.styled";
-
-//REACT-ROUTER-DOM
-import { useHistory } from "react-router-dom";
-
+//ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+//REACT-ROUTER-DOM
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+//FUNTION HANDLER
+import { handleBookListClick } from "../../services/functions";
 
 function UpdateBook(props) {
   const [newBookName, setNewBookName] = useState("");

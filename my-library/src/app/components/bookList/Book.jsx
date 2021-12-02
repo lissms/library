@@ -1,16 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-// Styled
+//STYLES
 import { CardStyled } from "./book.styled";
-
-//Utilities
-
+//ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
-
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
+//FUNTION HANDLER
 import {
   handleUpdate,
   handleDetailClick,

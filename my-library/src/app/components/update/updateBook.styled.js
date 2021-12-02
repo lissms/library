@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+//Variables
+import { COLORS } from "../../../styles/variables/colors";
+
 export const UpdateContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -16,9 +19,24 @@ export const UpdateStyle = styled.div`
   padding: 32px;
   border: 1px solid #f17680;
   border-radius: 4px;
+  position: relative;
 
   & .title {
     color: #6d5a7f;
+  }
+
+  & .button {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    margin: 3px;
+    background: ${COLORS.special_orange};
+    border: none;
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    right: 0px;
+    top: 3px;
   }
 
   & .from {

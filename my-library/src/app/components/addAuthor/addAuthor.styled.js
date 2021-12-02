@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+//Variables
+import { COLORS } from "../../../styles/variables/colors";
+
 export const AddUserContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -14,11 +17,25 @@ export const AddUserStyle = styled.div`
   align-items: center;
   background: #ffffff8c;
   padding: 32px;
-  border: 1px solid #f17680;
+  border: 1px solid ${COLORS.special_orange};
   border-radius: 4px;
+  position: relative;
 
   & .title {
     color: #6d5a7f;
+  }
+  & .button {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    margin: 3px;
+    background: ${COLORS.special_orange};
+    border: none;
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    right: 0px;
+    top: 3px;
   }
 
   & .from {

@@ -16,6 +16,9 @@ import { UpdateContainer, UpdateStyle } from "./updateBook.styled";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+
 function UpdateBook(props) {
   const [newBookName, setNewBookName] = useState("");
   const [newIsbn, setNewIsbn] = useState("");
@@ -25,6 +28,8 @@ function UpdateBook(props) {
   let { id } = useParams();
 
   let history = useHistory();
+
+  const close = <FontAwesomeIcon icon={faTimesCircle} />;
 
   useEffect(() => {
     getBookDetails(id).then((data) => {
@@ -42,6 +47,16 @@ function UpdateBook(props) {
       <UpdateContainer>
         <UpdateStyle>
           <h2 className="title">Update Book</h2>
+          <button
+            title="Close"
+            className="button"
+            onClick={() => {
+              handleBookListClick(history);
+              getBooks();
+            }}
+          >
+            {close}
+          </button>
           <form className="from" onSubmit={handleFormSubmit}>
             <label className="update-name-label" for="Name">
               Update name book
@@ -85,15 +100,6 @@ function UpdateBook(props) {
               type="submit"
               value="Update"
             />
-            <button
-              className="button"
-              onClick={() => {
-                handleBookListClick(history);
-                getBooks();
-              }}
-            >
-              X
-            </button>
           </form>
           <p>{message}</p>
         </UpdateStyle>

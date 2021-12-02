@@ -7,6 +7,9 @@ import { addAuthor, getBooks } from "../../services/booksApi";
 //STYLES
 import { AddUserContainer, AddUserStyle } from "./addAuthor.styled";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 
@@ -16,6 +19,8 @@ function AddAuthor(props) {
   const [authorName, setAuthorName] = useState("");
   const [authorLastName, setAuthorLastName] = useState("");
   const [message, setMessage] = useState("");
+
+  const close = <FontAwesomeIcon icon={faTimesCircle} />;
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +32,16 @@ function AddAuthor(props) {
       <AddUserContainer>
         <AddUserStyle>
           <h2 className="title">Add new Author</h2>
+          <button
+            title="Close"
+            className="button"
+            onClick={() => {
+              handleBookListClick(history);
+              getBooks();
+            }}
+          >
+            {close}
+          </button>
           <form className="from" onSubmit={handleFormSubmit}>
             <label className="add-name-label" for="Name">
               Name Author
@@ -73,15 +88,6 @@ function AddAuthor(props) {
           </form>
           <p>{message}</p>
         </AddUserStyle>
-        <button
-          className="button"
-          onClick={() => {
-            handleBookListClick(history);
-            getBooks();
-          }}
-        >
-          X
-        </button>
       </AddUserContainer>
     </Layaut>
   );

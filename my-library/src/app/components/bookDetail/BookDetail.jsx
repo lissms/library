@@ -84,12 +84,7 @@ function BookDetail(props) {
             >
               {editauthor}
             </button>
-            <button
-              className="button"
-              onClick={() => handleRemoveClick(history, id)}
-            >
-              {remove}
-            </button>
+
             <button
               title="Back to book list"
               className="button"

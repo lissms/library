@@ -11,7 +11,6 @@ export const DetailBookStyled = styled.div`
   & .card {
     position: relative;
     background: ${COLORS.gray};
-    width: 30%;
     margin: 30px 0;
     border-radius: 5px;
     display: flex;

@@ -7,7 +7,11 @@ import { addBook, getBooks } from "../../services/booksApi";
 import SelectAuthor from "./select/SelectAuthor";
 
 //STYLES
-import { AddUserContainer, AddUserStyle } from "./addBook.styled";
+import {
+  AddUserContainer,
+  AddUserStyle,
+  ButtonAddAuthor,
+} from "./addBook.styled";
 
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
@@ -17,11 +21,17 @@ import {
   handleAddAuthorClick,
 } from "../../services/functions";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+
 function AddBook(props) {
   const [newBookName, setNewBookName] = useState("");
   const [newIsbn, setNewIsbn] = useState("");
   const [idAuthor, setIdAuthor] = useState("");
   const [message, setMessage] = useState("");
+
+  const addAuthor = <FontAwesomeIcon icon={faUserPlus} />;
+  const close = <FontAwesomeIcon icon={faTimesCircle} />;
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -34,6 +44,16 @@ function AddBook(props) {
       <AddUserContainer>
         <AddUserStyle>
           <h2 className="title">Add new Book</h2>
+          <button
+            title="Close"
+            className="button"
+            onClick={() => {
+              handleBookListClick(history);
+              getBooks();
+            }}
+          >
+            {close}
+          </button>
           <form className="from" onSubmit={handleFormSubmit}>
             <label className="add-name-book-label" for="Name">
               Name Book
@@ -62,20 +82,26 @@ function AddBook(props) {
               name="isbn"
               required
             ></input>
-            <input
-              className="button-add-author"
-              onClick={() => {
-                handleAddAuthorClick(history);
-              }}
-              type="button"
-              value="Add Author"
-            />
 
-            <SelectAuthor
-              onChange={(ev) => {
-                setIdAuthor(ev.target.value);
-              }}
-            />
+            <label className="add-name-book-label" for="Name">
+              Author
+            </label>
+            <div className="add_author">
+              <ButtonAddAuthor
+                title="Add author"
+                onClick={() => {
+                  handleAddAuthorClick(history);
+                }}
+              >
+                {addAuthor}
+              </ButtonAddAuthor>
+
+              <SelectAuthor
+                onChange={(ev) => {
+                  setIdAuthor(ev.target.value);
+                }}
+              />
+            </div>
             <input
               className="button-save"
               name={newBookName}
@@ -84,7 +110,7 @@ function AddBook(props) {
               disabled={newBookName === "" || newIsbn === "" || idAuthor === ""}
               onClick={() => {
                 addBook(newBookName, newIsbn, idAuthor);
-                setMessage(`The book named ${newBookName} has been update`);
+                setMessage(`The book named ${newBookName} has been added`);
               }}
               type="submit"
               value="save"
@@ -92,15 +118,6 @@ function AddBook(props) {
           </form>
           <p>{message}</p>
         </AddUserStyle>
-        <button
-          className="button"
-          onClick={() => {
-            handleBookListClick(history);
-            getBooks();
-          }}
-        >
-          X
-        </button>
       </AddUserContainer>
     </Layaut>
   );

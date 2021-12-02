@@ -7,11 +7,7 @@ import { CardStyled } from "./book.styled";
 //Utilities
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTrashAlt,
-  faEdit,
-  faUserEdit,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
 
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
@@ -31,13 +27,13 @@ function Book(props) {
   return (
     <div>
       <CardStyled>
-        <p
+        <h2
           title="more datail"
           className="title"
           onClick={() => handleDetailClick(history, props.id)}
         >
           {props.name}
-        </p>
+        </h2>
         <div className="button-container">
           <button
             title="update Book"

@@ -15,9 +15,8 @@ export const CardStyled = styled.div`
   align-items: center;
   padding: 5px 10px;
   & .title {
-    color: ${COLORS.black};
+    color: ${COLORS.purple};
     margin-left: 16px;
-    font-weight: 100;
     font-size: 24px;
     padding: 5px;
     cursor: pointer;
@@ -37,5 +36,10 @@ export const CardStyled = styled.div`
     border: none;
     color: white;
     border-radius: 4px;
+  }
+  & .add_author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;

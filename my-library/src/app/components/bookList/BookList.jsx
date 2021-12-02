@@ -18,7 +18,6 @@ function BookList(props) {
 
   useEffect(() => {
     getBooks().then((data) => {
-      console.log(`data`, data);
       setBooksList(data);
     });
   }, []);
@@ -29,7 +28,7 @@ function BookList(props) {
         {bookList.map((book, index) => {
           return (
             <ItemListStyled key={index}>
-              <Book name={book.name} id={book.id}></Book>
+              <Book name={book.name} id={book.id} author={book.author}></Book>
             </ItemListStyled>
           );
         })}

@@ -7,15 +7,24 @@ import { CardStyled } from "./book.styled";
 //Utilities
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTrashAlt,
+  faEdit,
+  faUserEdit,
+} from "@fortawesome/free-solid-svg-icons";
 
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-import { handleUpdate, handleDetailClick } from "../../services/functions";
+import {
+  handleUpdate,
+  handleDetailClick,
+  handleUpdateAuthor,
+} from "../../services/functions";
 
 function Book(props) {
   // icon
   const edit = <FontAwesomeIcon icon={faEdit} />;
+  const editauthor = <FontAwesomeIcon icon={faUserEdit} />;
   const remove = <FontAwesomeIcon icon={faTrashAlt} />;
 
   let history = useHistory();
@@ -35,6 +44,12 @@ function Book(props) {
             onClick={() => handleUpdate(history, props.id)}
           >
             {edit}
+          </button>
+          <button
+            className="button"
+            onClick={() => handleUpdateAuthor(history, props.author)}
+          >
+            {editauthor}
           </button>
           <button className="button">{remove}</button>
         </div>

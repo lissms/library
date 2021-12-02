@@ -1,3 +1,7 @@
+// TODO
+// Separa este fichero en dos, uno para books y otro para user
+// Si este archivo está dentro de la carpeta service, no es necesario ponerle API
+
 const url = "http://localhost:3001";
 
 //GET
@@ -42,7 +46,7 @@ export const getAuthorDetails = (author) => {
     });
 };
 
-//POST
+// POST
 
 export const addBook = (name, isbn, author) => {
   return fetch(`${url}/books`, {

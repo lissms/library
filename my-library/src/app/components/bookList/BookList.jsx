@@ -1,13 +1,17 @@
+// REACT
 import React, { useState, useEffect } from "react";
-//COMPONENT
+
+// COMPONENT
 import Layaut from "../../layaut/Layaut";
 import Book from "./Book";
-//SERVICES
+
+// SERVICES
 import { getBooks } from "../../services/booksApi";
-//STYLES
+
+// STYLES
 import { ItemListStyled, ListStyle } from "./bookList.styled";
 
-function BookList(props) {
+function BookList() {
   const [bookList, setBooksList] = useState([]);
 
   useEffect(() => {

@@ -1,20 +1,26 @@
+// REACT
 import React from "react";
-//REACT-ROUTER-DOM
+
+// REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-//SERVICES
+
+// SERVICES
 import { getBooks } from "../services/booksApi";
-//STYLES
+
+// STYLES
 import {
   HeaderStyled,
   ContentStyled,
   ButtonStyled,
   FooterStyled,
 } from "./layaut.styled";
-//IMAGES
+
+// IMAGES
 import logo from "../../asset/images/icono_short.png";
 import logoLarge from "../../asset/images/Logo.png";
 import book from "../../asset/images/book.png";
-//FUNCTION NAVIGATE
+
+// HELPERS
 import { goToAddBookPage, goToBookList } from "../services/helpNavigate";
 
 function Layaut(props) {
@@ -28,7 +34,6 @@ function Layaut(props) {
           className="button"
           onClick={() => {
             goToBookList(history);
-            getBooks();
           }}
         >
           <img className="logo" src={logo} alt="icono" />

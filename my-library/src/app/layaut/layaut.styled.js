@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-//Images
+// IMAGES
 import background from "../../asset/images/library-background.jpg";
 
-//Variables
+// VARIABLES
 import { COLORS } from "../../styles/variables/colors";
 
 export const HeaderStyled = styled.header`

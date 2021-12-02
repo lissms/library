@@ -1,21 +1,27 @@
-//REACT
+// REACT
 import React, { useState, useEffect } from "react";
-//COMPONENTS
+
+// COMPONENTS
 import Layout from "../../layaut/Layaut";
-//SERVICE
+
+// SERVICE
 import { updateBook, getBookDetails, getBooks } from "../../services/booksApi";
-//STYLES
+
+// STYLES
 import { CardContainerStyle, CardStyle } from "../../../styles/cardTeme.styled";
-//ICON
+
+// ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-//REACT-ROUTER-DOM
+
+// REACT-ROUTER-DOM
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-//FUNCTION NAVIGATE
+
+// HELPERS
 import { goToBookList } from "../../services/helpNavigate";
 
-function UpdateBook(props) {
+function UpdateBook() {
   const [newBookName, setNewBookName] = useState("");
   const [newIsbn, setNewIsbn] = useState("");
   const [message, setMessage] = useState("");
@@ -48,7 +54,6 @@ function UpdateBook(props) {
             className="button"
             onClick={() => {
               goToBookList(history);
-              getBooks();
             }}
           >
             {close}
@@ -70,7 +75,6 @@ function UpdateBook(props) {
             />
             <label for="Name">ISBN</label>
             <input
-              className="update-birthday"
               onChange={(ev) => {
                 setNewIsbn(ev.target.value);
                 setDisabled(false);
@@ -82,8 +86,6 @@ function UpdateBook(props) {
             ></input>
             <input
               className="button-save"
-              userName={newBookName}
-              isbn={newIsbn}
               disabled={disabled === true || newBookName === ""}
               onClick={() => {
                 updateBook(id, newBookName, newIsbn);

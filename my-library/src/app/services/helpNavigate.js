@@ -1,3 +1,9 @@
+// TODO
+// Cambiar nombre del archivo a navigationHelper.js
+// Borrar todos los comentarios, no son necesarios porque la funciones estan bien nombradas
+// Cambiar el nombre de los parámetros "props" por uno más especifico
+// Sacar este archivo de la carpeta service, y ponerlo dentro de uno de que se llame helpers
+
 //goToBookList
 export const goToBookList = (history) => {
   history.push(`/`);

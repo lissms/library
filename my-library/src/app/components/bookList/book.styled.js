@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-//Variables
+// VARIABLES
 import { COLORS } from "../../../styles/variables/colors";
 
 export const CardStyled = styled.div`

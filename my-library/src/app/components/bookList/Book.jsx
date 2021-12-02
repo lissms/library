@@ -1,12 +1,17 @@
+// REACT
 import React from "react";
-//STYLES
+
+// STYLES
 import { CardStyled } from "./book.styled";
-//ICON
+
+// ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
-//REACT-ROUTER-DOM
+
+// REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-//FUNCTION NAVIGATE
+
+// HELPERS
 import {
   goToUpdateBookPage,
   goToBookDetail,

@@ -1,18 +1,25 @@
+// REACT
 import React, { useState } from "react";
-//COMPONENT
+
+// COMPONENT
 import Layaut from "../../layaut/Layaut";
 import SelectAuthor from "./select/SelectAuthor";
-//SERVICES
+
+// SERVICES
 import { addBook, getBooks } from "../../services/booksApi";
-//STYLES
+
+// STYLES
 import { CardStyle, CardContainerStyle } from "../../../styles/cardTeme.styled";
 import { ButtonAddAuthor, AddAuthorStyle } from "./addBook.styled";
-//ICON
+
+// ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-//REACT-ROUTER-DOM
+
+// REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-//FUNCTION NAVIGATE
+
+// HELPERS
 import { goToBookList, goToAddAuthorPage } from "../../services/helpNavigate";
 
 function AddBook(props) {
@@ -40,7 +47,6 @@ function AddBook(props) {
             className="button"
             onClick={() => {
               goToBookList(history);
-              getBooks();
             }}
           >
             {close}

@@ -1,19 +1,26 @@
+// REACT
 import React, { useState } from "react";
-//COMPONENT
+
+// COMPONENT
 import Layaut from "../../layaut/Layaut";
-//SERVICES
+
+// SERVICES
 import { addAuthor, getBooks } from "../../services/booksApi";
-//STYLES
+
+// STYLES
 import { CardContainerStyle, CardStyle } from "../../../styles/cardTeme.styled";
-//ICON
+
+// ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-//REACT-ROUTER-DOM
+
+// REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
-//FUNCTION NAVIGATE
+
+// HELPERS
 import { goToBookList } from "../../services/helpNavigate";
 
-function AddAuthor(props) {
+function AddAuthor() {
   const [authorName, setAuthorName] = useState("");
   const [authorLastName, setAuthorLastName] = useState("");
   const [message, setMessage] = useState("");
@@ -36,7 +43,6 @@ function AddAuthor(props) {
             className="button"
             onClick={() => {
               goToBookList(history);
-              getBooks();
             }}
           >
             {close}

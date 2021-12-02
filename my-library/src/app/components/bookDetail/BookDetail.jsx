@@ -1,29 +1,35 @@
+// REACT
 import React, { useState, useEffect } from "react";
-//COMPONENT
+
+// COMPONENT
 import Layaut from "../../layaut/Layaut";
 
-//SERVICES
+// SERVICES
 import { getBookDetails, getAuthorDetails } from "../../services/booksApi";
-//STYLES
+
+// STYLES
 import { DetailBookStyled } from "./bookDetail.styled";
-//ICON
+
+// ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEdit,
   faUserEdit,
   faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
-//REACT-ROUTER-DOM
+
+// REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
-//FUNCTION NAVIGATE
+
+// HELPERS
 import {
   goToUpdateBookPage,
   goToBookList,
   goToUpdateAuthorPage,
 } from "../../services/helpNavigate";
 
-function BookDetail(props) {
+function BookDetail() {
   const [bookDetail, setBookDetail] = useState({});
   const [authorDetail, setAuthorDetail] = useState({});
 

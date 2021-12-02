@@ -25,7 +25,6 @@ function Book(props) {
   // icon
   const edit = <FontAwesomeIcon icon={faEdit} />;
   const editauthor = <FontAwesomeIcon icon={faUserEdit} />;
-  const remove = <FontAwesomeIcon icon={faTrashAlt} />;
 
   let history = useHistory();
 
@@ -54,7 +53,6 @@ function Book(props) {
           >
             {editauthor}
           </button>
-          <button className="button">{remove}</button>
         </div>
       </CardStyled>
     </div>

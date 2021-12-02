@@ -7,7 +7,7 @@ import { getBooks } from "../../services/booksApi";
 import Book from "./Book";
 
 // Styled
-import { ItemListStyled } from "./bookList.styled";
+import { ItemListStyled, ListStyle } from "./bookList.styled";
 
 import Layaut from "../../layaut/Layaut";
 
@@ -24,7 +24,7 @@ function BookList(props) {
 
   return (
     <Layaut>
-      <ul>
+      <ListStyle>
         {bookList.map((book, index) => {
           return (
             <ItemListStyled key={index}>
@@ -32,7 +32,7 @@ function BookList(props) {
             </ItemListStyled>
           );
         })}
-      </ul>
+      </ListStyle>
     </Layaut>
   );
 }

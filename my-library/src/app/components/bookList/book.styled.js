@@ -5,13 +5,15 @@ import { COLORS } from "../../../styles/variables/colors";
 
 export const CardStyled = styled.div`
   background: ${COLORS.gray};
-  width: 30%;
+  width: 300px;
   height: 75px;
   margin: 30px 0;
   border-radius: 5px;
+  border: 2px solid ${COLORS.special_orange};
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 5px 10px;
   & .title {
     color: ${COLORS.black};
     margin-left: 16px;

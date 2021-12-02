@@ -25,15 +25,15 @@ export const HeaderStyled = styled.header`
     padding: 5px;
   }
   & .logo {
-    width: 4%;
+    width: 42px;
   }
 `;
 
 export const ContentStyled = styled.div`
   background-image: ${COLORS.general_background} url(${background});
-  min-height: 94vh;
-  padding-top: 12vh;
+  padding: 12vh 0;
   box-sizing: border-box;
+  min-height: 100vh;
 `;
 
 export const ButtonStyled = styled.button`
@@ -45,13 +45,19 @@ export const ButtonStyled = styled.button`
   cursor: pointer;
   outline: inherit;
   position: absolute;
-  bottom: 43px;
+  bottom: 5px;
   right: 16px;
 `;
 
 export const FooterStyled = styled.footer`
-  background: ${COLORS.black};
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0;
+  background: ${COLORS.black_strong};
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 70px;
+  padding: 0 16px;
 `;

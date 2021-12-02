@@ -26,18 +26,16 @@ function Layaut(props) {
         <h1 className="title"> My Library</h1>
       </HeaderStyled>
 
-      <ContentStyled>
-        {props.children}
+      <ContentStyled>{props.children}</ContentStyled>
+
+      <FooterStyled>
+        <img src={logoLarge} alt="" />
         <ButtonStyled
           title="Add book"
           onClick={() => history.push("/book/add")}
         >
           <img src={book} alt="book" />
         </ButtonStyled>
-      </ContentStyled>
-
-      <FooterStyled>
-        <img src={logoLarge} alt="" />
       </FooterStyled>
     </div>
   );

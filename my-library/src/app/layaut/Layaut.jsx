@@ -12,6 +12,8 @@ import {
 import logo from "../../asset/images/icono_short.png";
 import logoLarge from "../../asset/images/Logo.png";
 import book from "../../asset/images/book.png";
+//FUNTION HANDLER
+import { goToAddBookPage } from "../services/functions";
 
 function Layaut(props) {
   const history = useHistory();
@@ -29,7 +31,9 @@ function Layaut(props) {
         <img src={logoLarge} alt="" />
         <ButtonStyled
           title="Add book"
-          onClick={() => history.push("/book/add")}
+          onClick={() => {
+            goToAddBookPage(history);
+          }}
         >
           <img src={book} alt="book" />
         </ButtonStyled>

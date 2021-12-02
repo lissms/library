@@ -70,13 +70,13 @@ export const addAuthor = (first_name, last_name) => {
 
 //PUT
 
-export const updateBook = (id, book, isbn) => {
+export const updateBook = (id, name, isbn) => {
   return fetch(`${url}/books/${id}`, {
-    method: "PUT",
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id, book, isbn }),
+    body: JSON.stringify({ id, name, isbn }),
   })
     .then((response) => response.json())
     .then((data) => data);

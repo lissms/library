@@ -18,9 +18,9 @@ import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 //FUNTION HANDLER
 import {
-  handleUpdate,
-  handleBookListClick,
-  handleUpdateAuthor,
+  goToUpdateBookPage,
+  goToBookList,
+  goToUpdateAuthorPage,
 } from "../../services/functions";
 
 function BookDetail(props) {
@@ -56,14 +56,16 @@ function BookDetail(props) {
             <button
               title="update book"
               className="button"
-              onClick={() => handleUpdate(history, id)}
+              onClick={() => goToUpdateBookPage(history, id)}
             >
               {edit}
             </button>
             <button
               title="update author"
               className="button"
-              onClick={() => handleUpdateAuthor(history, authorDetail.authorId)}
+              onClick={() =>
+                goToUpdateAuthorPage(history, authorDetail.authorId)
+              }
             >
               {editauthor}
             </button>
@@ -71,7 +73,7 @@ function BookDetail(props) {
             <button
               title="Back to book list"
               className="button"
-              onClick={() => handleBookListClick(history)}
+              onClick={() => goToBookList(history)}
             >
               {bookList}
             </button>

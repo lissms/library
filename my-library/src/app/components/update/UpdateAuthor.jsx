@@ -17,7 +17,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 //FUNTION HANDLER
-import { handleBookListClick } from "../../services/functions";
+import { goToBookList } from "../../services/functions";
 
 function UpdateAuthor(props) {
   const [newAuthorName, setNewAuthorName] = useState("");
@@ -51,7 +51,7 @@ function UpdateAuthor(props) {
             title="Close"
             className="button"
             onClick={() => {
-              handleBookListClick(history);
+              goToBookList(history);
               getBooks();
             }}
           >

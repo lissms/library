@@ -8,9 +8,9 @@ import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 //FUNTION HANDLER
 import {
-  handleUpdate,
-  handleDetailClick,
-  handleUpdateAuthor,
+  goToUpdateBookPage,
+  goToBookDetail,
+  goToUpdateAuthorPage,
 } from "../../services/functions";
 
 function Book(props) {
@@ -26,7 +26,7 @@ function Book(props) {
         <h2
           title="more datail"
           className="title"
-          onClick={() => handleDetailClick(history, props.id)}
+          onClick={() => goToBookDetail(history, props.id)}
         >
           {props.name}
         </h2>
@@ -34,14 +34,14 @@ function Book(props) {
           <button
             title="update Book"
             className="button"
-            onClick={() => handleUpdate(history, props.id)}
+            onClick={() => goToUpdateBookPage(history, props.id)}
           >
             {edit}
           </button>
           <button
             title="update author"
             className="button"
-            onClick={() => handleUpdateAuthor(history, props.author)}
+            onClick={() => goToUpdateAuthorPage(history, props.author)}
           >
             {editauthor}
           </button>

@@ -11,7 +11,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 //FUNTION HANDLER
-import { handleBookListClick } from "../../services/functions";
+import { goToBookList } from "../../services/functions";
 
 function AddAuthor(props) {
   const [authorName, setAuthorName] = useState("");
@@ -35,7 +35,7 @@ function AddAuthor(props) {
             title="Close"
             className="button"
             onClick={() => {
-              handleBookListClick(history);
+              goToBookList(history);
               getBooks();
             }}
           >

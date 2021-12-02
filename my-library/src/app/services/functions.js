@@ -1,33 +1,37 @@
-export const handleUpdate = (history, props) => {
-  history.push(`/book/update/${props}`);
-};
-export const handleUpdateAuthor = (history, props) => {
-  history.push(`/author/update/${props}`);
-};
-export const handleRemoveClick = (history, props) => {
-  history.push(`/book/update/${props}`);
-};
-export const handleBookListClick = (history) => {
+//goToBookList
+export const goToBookList = (history) => {
   history.push(`/`);
 };
-export const handleAddClick = (history, props) => {
-  history.push(`/book/update/${props}`);
+
+//handleAddClick
+export const goToAddBookPage = (history) => {
+  history.push(`/book/add`);
 };
-export const handleAddAuthorClick = (history) => {
+
+//goToAddAuthorPage
+export const goToAddAuthorPage = (history) => {
   history.push(`/author/add`);
 };
 
-export const handleDetailClick = (history, props) => {
+//goToBookDetail
+export const goToBookDetail = (history, props) => {
   history.push(`/book/detail/${props}`);
 };
 
-/* import {
-  handleUpdate,
-  handleRemoveClick,
-  handleBookListClick,
-} from "../../services/functions";
+//goToUpdateBookPage
+export const goToUpdateBookPage = (history, props) => {
+  history.push(`/book/update/${props}`);
+};
 
-let history = useHistory();
+//goToUpdateAuthorPage
+export const goToUpdateAuthorPage = (history, props) => {
+  history.push(`/author/update/${props}`);
+};
 
+/* export const handleAddClick = (history, props) => {
+  history.push(`/book/update/${props}`);
+}; */
 
-onClick={() => handleRemoveClick(history, props.id)} */
+/* export const handleRemoveClick = (history, props) => {
+  history.push(`/book/update/${props}`);
+}; */

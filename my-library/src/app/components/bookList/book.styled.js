@@ -6,7 +6,7 @@ import { COLORS } from "../../../styles/variables/colors";
 export const CardStyled = styled.div`
   background: ${COLORS.gray};
   width: 300px;
-  height: 75px;
+  height: 95px;
   margin: 30px 0;
   border-radius: 5px;
   border: 2px solid ${COLORS.special_orange};

@@ -99,3 +99,11 @@ export const updateAuthor = (authorId, name, lastName) => {
     .then((response) => response.json())
     .then((data) => data);
 };
+
+//DELETE
+
+export const deleteBook = (id) => {
+  return fetch(`${url}/books/${id}`, {
+    method: "DELETE",
+  });
+};

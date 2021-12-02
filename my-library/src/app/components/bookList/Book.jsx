@@ -1,12 +1,19 @@
 // REACT
-import React from "react";
+import React, { useState } from "react";
+
+// COMPONENT
+import ModalWindow from "../../modal/ModalWindow";
 
 // STYLES
 import { CardStyled } from "./book.styled";
 
 // ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEdit,
+  faUserEdit,
+  faTrashAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 // REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
@@ -22,8 +29,15 @@ function Book(props) {
   // icon
   const edit = <FontAwesomeIcon icon={faEdit} />;
   const editauthor = <FontAwesomeIcon icon={faUserEdit} />;
+  const remove = <FontAwesomeIcon icon={faTrashAlt} />;
 
   let history = useHistory();
+
+  const [hasModalOpen, setHasModalOpen] = useState(false);
+
+  const showModalWindow = () => {
+    setHasModalOpen(hasModalOpen ? false : true);
+  };
 
   return (
     <div>
@@ -50,8 +64,18 @@ function Book(props) {
           >
             {editauthor}
           </button>
+          <button className="button" onClick={showModalWindow}>
+            {remove}
+          </button>
         </div>
       </CardStyled>
+      {hasModalOpen ? (
+        <ModalWindow
+          id={props.id}
+          author={props.author}
+          setHasModalOpen={setHasModalOpen}
+        />
+      ) : null}
     </div>
   );
 }

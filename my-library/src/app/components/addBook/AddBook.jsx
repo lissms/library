@@ -5,11 +5,8 @@ import SelectAuthor from "./select/SelectAuthor";
 //SERVICES
 import { addBook, getBooks } from "../../services/booksApi";
 //STYLES
-import {
-  AddUserContainer,
-  AddUserStyle,
-  ButtonAddAuthor,
-} from "./addBook.styled";
+import { CardStyle, CardContainerStyle } from "../../../styles/cardTeme.styled";
+import { ButtonAddAuthor, AddAuthorStyle } from "./addBook.styled";
 //ICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -35,8 +32,8 @@ function AddBook(props) {
 
   return (
     <Layaut>
-      <AddUserContainer>
-        <AddUserStyle>
+      <CardContainerStyle>
+        <CardStyle>
           <h2 className="title">Add new Book</h2>
           <button
             title="Close"
@@ -53,7 +50,6 @@ function AddBook(props) {
               Name Book
             </label>
             <input
-              className="add-name-book"
               onChange={(ev) => {
                 setNewBookName(ev.target.value);
               }}
@@ -63,11 +59,8 @@ function AddBook(props) {
               placeholder="Name book"
               required
             />
-            <label className="add-author" for="Name">
-              isbn
-            </label>
+            <label for="Name">isbn</label>
             <input
-              className="add-isbn"
               onChange={(ev) => {
                 setNewIsbn(ev.target.value);
               }}
@@ -77,10 +70,8 @@ function AddBook(props) {
               required
             ></input>
 
-            <label className="add-name-book-label" for="Name">
-              Author
-            </label>
-            <div className="add_author">
+            <label for="Name">Author</label>
+            <AddAuthorStyle>
               <ButtonAddAuthor
                 title="Add author"
                 onClick={() => {
@@ -95,7 +86,7 @@ function AddBook(props) {
                   setIdAuthor(ev.target.value);
                 }}
               />
-            </div>
+            </AddAuthorStyle>
             <input
               className="button-save"
               name={newBookName}
@@ -111,8 +102,8 @@ function AddBook(props) {
             />
           </form>
           <p>{message}</p>
-        </AddUserStyle>
-      </AddUserContainer>
+        </CardStyle>
+      </CardContainerStyle>
     </Layaut>
   );
 }

@@ -1,6 +1,9 @@
 export const handleUpdate = (history, props) => {
   history.push(`/book/update/${props}`);
 };
+export const handleUpdateAuthor = (history, props) => {
+  history.push(`/author/update/${props}`);
+};
 export const handleRemoveClick = (history, props) => {
   history.push(`/book/update/${props}`);
 };

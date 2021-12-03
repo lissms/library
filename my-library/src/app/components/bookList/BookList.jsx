@@ -23,18 +23,13 @@ function BookList(props) {
     getBooks().then((data) => {
       setBooksList(data);
       props.setLoadingData(false);
+      localStorage.clear();
     });
   };
 
   useEffect(() => {
     getBookList();
   }, []);
-
-  /*  useEffect(() => {
-    getBooks().then((data) => {
-      setBooksList(data);
-    });
-  }, []); */
 
   return (
     <Layaut>

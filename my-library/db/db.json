@@ -1,0 +1,28 @@
+{
+  "authors": [
+    {
+      "id": "01",
+      "first_name": "Robert",
+      "last_name": "Martin"
+    },
+    {
+      "id": "02",
+      "first_name": "Antoine",
+      "last_name": "Saint-Exupéry"
+    }
+  ],
+  "books": [
+    {
+      "id": "11",
+      "name": "Clean Code",
+      "isbn": "123456",
+      "author": "01"
+    },
+    {
+      "name": "React",
+      "isbn": "123456",
+      "author": "01",
+      "id": "EhNEIEP"
+    }
+  ]
+}

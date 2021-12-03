@@ -4,8 +4,7 @@
 
 ### Levantar el mock del Api: db.json
 
-Dentro del carpeta my-library:
-ejecutar en la terminal :
+En la terminal, dentro de la carpeta "my-library/db" ejecutar:
 
 - npm install -g json-server
 - json-server db.json -p 3001 ( en caso de windows ejecutar en la terminal cmd)

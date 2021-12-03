@@ -18,7 +18,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
 // HELPERS
-import { goToBookList } from "../../services/helpNavigate";
+import { goToAddBookPage } from "../../services/helpNavigate";
 
 function AddAuthor() {
   const [authorName, setAuthorName] = useState("");
@@ -42,7 +42,7 @@ function AddAuthor() {
             title="Close"
             className="button"
             onClick={() => {
-              goToBookList(history);
+              goToAddBookPage(history);
             }}
           >
             {close}

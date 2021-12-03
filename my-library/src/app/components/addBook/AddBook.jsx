@@ -48,6 +48,7 @@ function AddBook(props) {
             title="Close"
             className="button"
             onClick={() => {
+              localStorage.clear();
               goToBookList(history);
             }}
           >

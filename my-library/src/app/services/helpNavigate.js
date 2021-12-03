@@ -1,8 +1,3 @@
-// TODO
-// Cambiar nombre del archivo a navigationHelper.js
-// Cambiar el nombre de los parámetros "props" por uno más especifico
-// Sacar este archivo de la carpeta service, y ponerlo dentro de uno de que se llame helpers
-
 export const goToBookList = (history) => {
   history.push(`/`);
 };

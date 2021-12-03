@@ -6,7 +6,9 @@ import Layaut from "../../layaut/Layaut";
 import SelectAuthor from "./select/SelectAuthor";
 
 // SERVICES
-import { addBook, getBooks } from "../../services/booksApi";
+import { addBook } from "../../services/booksApi";
+//CUSTOM-HOOK
+import { useLocalStorage } from "../../../customHook/useLocalStorage";
 
 // STYLES
 import { CardStyle, CardContainerStyle } from "../../../styles/cardTeme.styled";
@@ -23,8 +25,8 @@ import { useHistory } from "react-router-dom";
 import { goToBookList, goToAddAuthorPage } from "../../services/helpNavigate";
 
 function AddBook(props) {
-  const [newBookName, setNewBookName] = useState("");
-  const [newIsbn, setNewIsbn] = useState("");
+  const [newBookName, setNewBookName] = useLocalStorage("name", "");
+  const [newIsbn, setNewIsbn] = useLocalStorage("isbn", "");
   const [idAuthor, setIdAuthor] = useState("");
   const [message, setMessage] = useState("");
 
@@ -63,6 +65,7 @@ function AddBook(props) {
               name="name-book"
               id="name-book"
               placeholder="Name book"
+              value={newBookName}
               required
             />
             <label for="Name">isbn</label>
@@ -73,6 +76,7 @@ function AddBook(props) {
               type="text"
               id="isbn"
               name="isbn"
+              value={newIsbn}
               required
             ></input>
 

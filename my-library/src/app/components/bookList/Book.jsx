@@ -72,7 +72,7 @@ function Book(props) {
       {hasModalOpen ? (
         <ModalWindow
           id={props.id}
-          author={props.author}
+          name={props.name}
           setHasModalOpen={setHasModalOpen}
         />
       ) : null}

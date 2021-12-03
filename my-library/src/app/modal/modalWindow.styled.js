@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+//Variables
+import { COLORS } from "../../styles/variables/colors";
+
 export const Modal = styled.div`
   display: flex;
   align-items: center;
@@ -9,7 +12,7 @@ export const Modal = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 43, 69, 0.9);
+  background-color: #21282ce6;
 
   & form {
     display: flex;
@@ -31,11 +34,26 @@ export const Modal = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    color: ${COLORS.purple};
   }
 
   & .button_container {
     display: flex;
     justify-content: center;
+    & button {
+      width: 90px;
+      margin: 5px;
+      height: 34px;
+      border: none;
+      color: white;
+      border-radius: 4px;
+    }
+    & .button_cancel {
+      background: ${COLORS.purple};
+    }
+    & .button_remove {
+      background: #e87838bd;
+    }
   }
 
   & .button_container div {
@@ -49,16 +67,19 @@ export const Modal = styled.div`
 
 export const Close = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border-radius: 50%;
+  align-items: center;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
+  margin: 3px;
+  background: ${COLORS.special_orange};
+  border: none;
+  color: white;
+  border-radius: 4px;
   position: absolute;
-  top: 8px;
-  right: 8px;
+  right: 0px;
+  top: 3px;
 
   & p {
     font-size: 15px;

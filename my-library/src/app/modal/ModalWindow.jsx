@@ -27,16 +27,15 @@ function ModalWindow(props) {
       <div className="modal-container">
         <Close onClick={closeModalWindow}>{close}</Close>
         <div className="title-modal">
-          <p>Está seguro que quiere eliminar el libro tal</p>
-          {props.author}
+          <h3>Are you sure you want delete {props.name} ?</h3>
         </div>
         <div>
           <div className="button_container">
-            <button background="#caa4ea" onClick={closeModalWindow}>
+            <button className="button_cancel" onClick={closeModalWindow}>
               Candel
             </button>
             <button
-              background="#f17680"
+              className="button_remove"
               onClick={() => {
                 deleteBook(props.id).then(() => {
                   getBooks();
@@ -45,7 +44,7 @@ function ModalWindow(props) {
                 });
               }}
             >
-              remuve
+              Remove
             </button>
           </div>
         </div>

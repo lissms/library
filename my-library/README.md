@@ -4,7 +4,7 @@
 
 ### Levantar el mock del Api: db.json
 
-Dentro del carpeta my-library:
+Dentro de la carpeta my-library:
 ejecutar en la terminal :
 
 - npm install -g json-server
@@ -28,11 +28,11 @@ tecnologías:
 - Redux
 - styled-component
 
-diseño : Figma (https://www.figma.com/file/Dbx03EpZ1TDRiKfqDfL9l1/LIBRARY?node-id=0%3A1)
-Esquema de proyecto: draw.io
+- diseño : Figma (https://www.figma.com/file/Dbx03EpZ1TDRiKfqDfL9l1/LIBRARY?node-id=0%3A1)
+- Esquema de proyecto: draw.io
 
 ## Mejoras:
 
-- Un opción en la página principal para filtrar por: nombre de libro o autor.
+- Una opción en la página principal para filtrar por: nombre de libro o autor.
 - Hacer test unitarios.
 - Traducciones con i18n

@@ -74,6 +74,7 @@ function Book(props) {
           id={props.id}
           name={props.name}
           setHasModalOpen={setHasModalOpen}
+          getBookList={props.getBookList}
         />
       ) : null}
     </div>

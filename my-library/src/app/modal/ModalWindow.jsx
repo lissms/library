@@ -1,5 +1,9 @@
 import React from "react";
 
+//REACT-REDUX
+import { connect } from "react-redux";
+import { setLoadingData } from "../../actionsCreator/actionsCreator";
+
 //REACT-ROUTER-DOM
 import { useHistory } from "react-router-dom";
 
@@ -37,8 +41,9 @@ function ModalWindow(props) {
             <button
               className="button_remove"
               onClick={() => {
+                props.setLoadingData(true);
                 deleteBook(props.id).then(() => {
-                  getBooks();
+                  props.getBookList();
                   closeModalWindow();
                   history.push("/");
                 });
@@ -53,4 +58,8 @@ function ModalWindow(props) {
   );
 }
 
-export default ModalWindow;
+const mapDispatchToProps = {
+  setLoadingData,
+};
+
+export default connect(null, mapDispatchToProps)(ModalWindow);

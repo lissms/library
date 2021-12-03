@@ -1,6 +1,10 @@
 // REACT
 import React, { useState, useEffect } from "react";
 
+//REACT-REDUX
+import { connect } from "react-redux";
+import { setLoadingData } from "../../../actionsCreator/actionsCreator.js";
+
 // COMPONENT
 import Layaut from "../../layaut/Layaut";
 import Book from "./Book";
@@ -11,14 +15,26 @@ import { getBooks } from "../../services/booksApi";
 // STYLES
 import { ItemListStyled, ListStyle } from "./bookList.styled";
 
-function BookList() {
+function BookList(props) {
   const [bookList, setBooksList] = useState([]);
 
+  const getBookList = () => {
+    props.setLoadingData(true);
+    getBooks().then((data) => {
+      setBooksList(data);
+      props.setLoadingData(false);
+    });
+  };
+
   useEffect(() => {
+    getBookList();
+  }, []);
+
+  /*  useEffect(() => {
     getBooks().then((data) => {
       setBooksList(data);
     });
-  }, []);
+  }, []); */
 
   return (
     <Layaut>
@@ -26,7 +42,12 @@ function BookList() {
         {bookList.map((book, index) => {
           return (
             <ItemListStyled key={index}>
-              <Book name={book.name} id={book.id} author={book.author}></Book>
+              <Book
+                name={book.name}
+                id={book.id}
+                author={book.author}
+                getBookList={getBookList}
+              ></Book>
             </ItemListStyled>
           );
         })}
@@ -35,4 +56,8 @@ function BookList() {
   );
 }
 
-export default BookList;
+const mapDispatchToProps = {
+  setLoadingData,
+};
+
+export default connect(null, mapDispatchToProps)(BookList);
